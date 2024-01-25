@@ -1,15 +1,18 @@
 import {defineConfig} from 'vitepress'
+import {set_sidebar} from "../utils/auto-gen-sidebar.mjs";
+
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    base: "/knowledge-repository/",
+    base: "/knowledge-web/",
     title: "My Awesome Project",
     description: "A VitePress Site",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: 'Home', link: '/'},
-            {text: 'Examples', link: '/knowledge/markdown-examples'}
+            {text: 'Examples', link: '/knowledge/markdown-examples'},
+            {text: 'Java基础', link: '/knowledge/Java基础/1.1-Java基础'}
         ],
 
         sidebar: [
@@ -19,11 +22,17 @@ export default defineConfig({
                     {text: 'Markdown Examples', link: '/knowledge/markdown-examples'},
                     {text: 'Runtime API Examples', link: '/api-examples'}
                 ]
-            }
+            }, {
+                text: 'Java基础',
+                items: [
+                    {text: 'Java基础', link: '/knowledge/Java基础/1.1-Java基础'},
+                    {text: 'Java位运算', link: '/knowledge/Java基础/1.3-Java位运算'},
+                ]
+            },
         ],
 
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/vuejs/vitepress'}
+            {icon: 'github', link: 'https://github.com/EthanHTL'}
         ],
         // 底部配置
         footer: {
